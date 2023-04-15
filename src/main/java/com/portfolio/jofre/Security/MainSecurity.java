@@ -1,6 +1,6 @@
 package com.portfolio.jofre.Security;
 
-import com.portfolio.jofre.Security.Service.UserDetailsImpl;
+import com.portfolio.jofre.Security.Service.UserDetailsServiceImpl;
 import com.portfolio.jofre.Security.jwt.JwtEntryPoint;
 import com.portfolio.jofre.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 public class MainSecurity {
     @Autowired
-    UserDetailsImpl userDetailsServiceImpl;
+    UserDetailsServiceImpl userDetailsServiceImpl;
 
     @Autowired
     JwtEntryPoint jwtEntryPoint;

@@ -1,6 +1,6 @@
 package com.portfolio.jofre.Security.jwt;
 
-import com.portfolio.jofre.Security.Service.UserDetailsImpl;
+import com.portfolio.jofre.Security.Service.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,7 +26,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
-    UserDetailsImpl userDetailServiceImpl;
+    UserDetailsServiceImpl userDetailServiceImpl;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
