@@ -18,27 +18,25 @@ public class Shys {
         return rhys.findAll();
     }
     
-    public Optional<hys> getOne(int id){
-        return rhys.findById(id);
+    public hys getOne(int id){
+        return rhys.findById(id).orElse(null);
+    }
+        
+    
+    public void save(hys habi){
+        rhys.save(habi);
     }
     
-    public Optional<hys> getByNombre(String nombre){
-        return rhys.findByNombre(nombre);
-    }
-    
-    public void save(hys skill){
-        rhys.save(skill);
-    }
-    
-    public void delete(int id){
+     public void delete(int id){
         rhys.deleteById(id);
     }
     
-    public boolean existsById(int id){
-        return rhys.existsById(id);
+     public void edit(hys habi){
+        rhys.save(habi);
     }
     
-    public boolean existsByNombre(String nombre){
-        return rhys.existsByNombre(nombre);
+     //busca lista de relojes por la id de la persona
+    public List<hys> findByPersonaId(Long personaId) {
+        return rhys.findByPersonaId(personaId);
     }
 }

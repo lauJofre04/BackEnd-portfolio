@@ -1,11 +1,8 @@
 package com.portfolio.jofre.Controller;
 
-import com.portfolio.jofre.Dto.dtoHys;
 import com.portfolio.jofre.Entity.hys;
-import com.portfolio.jofre.jofre.Controller.Mensaje;
 import com.portfolio.jofre.Service.Shys;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,69 +22,43 @@ import org.springframework.web.bind.annotation.RestController;
 public class CHys {
 
     @Autowired
-    Shys shys;
-
-    @GetMapping("/lista")
-    public ResponseEntity<List<hys>> list() {
-        List<hys> list = shys.list();
+    private Shys sHabilidad;
+    
+    @GetMapping ("/lista")
+    public ResponseEntity<List<hys>> lista(){
+        List<hys> list = sHabilidad.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-
+    
+     //lista de relojes por id de persona
+    @GetMapping ("/persona/{id}/lista")
+    public List <hys> listaPer(@PathVariable Long id){
+        return sHabilidad.findByPersonaId(id);    
+        }
+    
     @GetMapping("/detail/{id}")
-    public ResponseEntity<hys> getById(@PathVariable("id") int id) {
-        if (!shys.existsById(id)) {
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        }
-        hys hYs = shys.getOne(id).get();
-        return new ResponseEntity(hYs, HttpStatus.OK);
+    public ResponseEntity<hys> detail(@PathVariable("id") int id){
+        hys habilidad = sHabilidad.getOne(id);
+        return new ResponseEntity(habilidad, HttpStatus.OK);
     }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!shys.existsById(id)) {
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        }
-        shys.delete(id);
-        return new ResponseEntity(new Mensaje("Skill eliminado"), HttpStatus.OK);
-    }
-
+    
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoHys dtohys) {
-        if (StringUtils.isBlank(dtohys.getNombre())) {
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
-        if (shys.existsByNombre(dtohys.getNombre())) {
-            return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
-        }
-
-        hys hYs = new hys(dtohys.getNombre(), dtohys.getPorcentaje());
-        shys.save(hYs);
-
-        return new ResponseEntity(new Mensaje("Skill agregada"), HttpStatus.OK);
+    public void save(@RequestBody hys habi) {
+        sHabilidad.save(habi);
+    }
+    
+    
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable ("id") int id){
+        sHabilidad.delete(id);
+    }
+    
+    @PutMapping("/update")
+    public void edit(@RequestBody hys habi) {
+        sHabilidad.save(habi);
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoHys dtohys) {
-        //Validamos si existe el ID
-        if (!shys.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
-        }
-        //Compara nombre de skills
-        if (shys.existsByNombre(dtohys.getNombre()) && shys.getByNombre(dtohys.getNombre()).get()
-                .getId() != id) {
-            return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
-        }
-        //No puede estar vacio
-        if (StringUtils.isBlank(dtohys.getNombre())) {
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
+    
 
-        hys hYs = shys.getOne(id).get();
-        hYs.setNombre(dtohys.getNombre());
-        hYs.setPorcentaje(dtohys.getPorcentaje());
-
-        shys.save(hYs);
-        return new ResponseEntity(new Mensaje("Skill actualizada"), HttpStatus.OK);
 
     }
-}

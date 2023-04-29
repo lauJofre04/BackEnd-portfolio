@@ -4,11 +4,8 @@
  */
 package com.portfolio.jofre.Controller;
 
-import com.portfolio.jofre.Dto.dtoEducacion;
 import com.portfolio.jofre.Entity.Educacion;
-import com.portfolio.jofre.jofre.Controller.Mensaje;
 import com.portfolio.jofre.Service.SEducacion;
-import io.micrometer.common.util.StringUtils;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,66 +31,36 @@ public class CEducacion {
     @Autowired
     SEducacion sEducacion;
     
-    @GetMapping("/lista")
+        @GetMapping ("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = sEducacion.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-    @GetMapping("/detail/{id}")
-    public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
-        if(!sEducacion.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
-        }
-        
-        Educacion educacion = sEducacion.getOne(id).get();
-        return new ResponseEntity(educacion, HttpStatus.OK);
-    }
     
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id){
-        if(!sEducacion.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
+      //lista de relojes por id de persona
+    @GetMapping ("/persona/{id}/lista")
+    public List <Educacion> listaPer(@PathVariable Long id){
+        return sEducacion.findByPersonaId(id);    
         }
-        sEducacion.delete(id);
-        return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
+    
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Educacion> detail(@PathVariable("id") int id){
+        Educacion edu = sEducacion.getOne(id);
+        return new ResponseEntity(edu, HttpStatus.OK);
     }
     
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
-        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
-        if(sEducacion.existsByNombreE(dtoeducacion.getNombreE())){
-            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        }
-        
-        Educacion educacion = new Educacion(
-                dtoeducacion.getNombreE(), dtoeducacion.getDescripcionE()
-            );
-        sEducacion.save(educacion);
-        return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
-                
+    public void save(@RequestBody Educacion edu) {      
+        sEducacion.save(edu);
     }
     
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion){
-        if(!sEducacion.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
-        }
-        if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.getByNombreE(dtoeducacion.getNombreE()).get().getId() != id){
-            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        }
-        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
-            return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
-        }
-        
-        Educacion educacion = sEducacion.getOne(id).get();
-        
-        educacion.setNombreE(dtoeducacion.getNombreE());
-        educacion.setDescripcionE(dtoeducacion.getDescripcionE());
-        
-        sEducacion.save(educacion);
-        
-        return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable ("id") int id){
+        sEducacion.delete(id);
+    }
+    
+    @PutMapping("/update")
+    public void edit(@RequestBody Educacion edu) {      
+        sEducacion.save(edu);
     }
 }

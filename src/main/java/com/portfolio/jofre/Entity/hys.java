@@ -4,26 +4,54 @@
  */
 package com.portfolio.jofre.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
+@Table(name="hys")
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class hys {
-    @Id
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombre;
+    @NotNull
+    private String habilidad;
+    @NotNull
+    @Min(0)
+    @Max(100)
     private int porcentaje;
+    
+    //relacion
+    @ManyToOne
+    //creacion de columna con llave foranea
+    @JoinColumn(name = "personaid", insertable=false, updatable=false)
+    //para que se borre si se borra la persona
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Persona persona;
+    
+
 
     public hys() {
     }
 
-    public hys(String nombre, int porcentaje) {
-        this.nombre = nombre;
+    public hys(String habilidad, int porcentaje, Persona persona) {
+        this.habilidad = habilidad;
         this.porcentaje = porcentaje;
+        this.persona = persona;
     }
 
     public int getId() {
@@ -34,12 +62,12 @@ public class hys {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getHabilidad() {
+        return habilidad;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setHabilidad(String habilidad) {
+        this.habilidad = habilidad;
     }
 
     public int getPorcentaje() {
@@ -49,8 +77,13 @@ public class hys {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
+     //Opción para que no haga un bug
+    @JsonBackReference
+    public Persona getPersona() {
+        return persona;
+    }
 
-    
-    
-    
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
 }

@@ -8,7 +8,6 @@ import com.portfolio.jofre.Entity.Educacion;
 import com.portfolio.jofre.Repository.REducacion;
 import jakarta.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +23,9 @@ public class SEducacion {
     public List<Educacion> list(){
         return rEducacion.findAll();
     }
-    public Optional<Educacion> getOne(int id){
-        return rEducacion.findById(id);
-    }
-    public Optional<Educacion> getByNombreE(String nombreE){
-        return rEducacion.findByNombreE(nombreE);
+    public Educacion getOne(int id){
+        Educacion edu= rEducacion.findById(id).orElse(null);
+        return edu;
     }
     public void save(Educacion educacion){
         rEducacion.save(educacion);
@@ -36,10 +33,10 @@ public class SEducacion {
     public void delete(int id){
         rEducacion.deleteById(id);
     }
-    public boolean existsById(int id){
-        return rEducacion.existsById(id);
+    public void edit(Educacion edu){
+        rEducacion.save(edu);
     }
-    public boolean existsByNombreE(String nombreE){
-        return rEducacion.existsByNombreE(nombreE);
+    public List<Educacion> findByPersonaId(Long personaId){
+        return rEducacion.findByPersonaId(personaId);
     }
 }

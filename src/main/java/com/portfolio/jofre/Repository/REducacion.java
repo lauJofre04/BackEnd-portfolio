@@ -5,7 +5,8 @@
 package com.portfolio.jofre.Repository;
 
 import com.portfolio.jofre.Entity.Educacion;
-import java.util.Optional;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface REducacion extends JpaRepository<Educacion,Integer> {
-    public Optional<Educacion> findByNombreE(String NombreE);
-    public boolean existsByNombreE(String NombreE);
+    List<Educacion> findByPersonaId(Long personaId);
 }

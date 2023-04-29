@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.jofre.Security.Entity;
 
 import jakarta.persistence.Column;
@@ -17,10 +13,6 @@ import jakarta.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author User
- */
 @Entity
 public class Usuario {
     @Id

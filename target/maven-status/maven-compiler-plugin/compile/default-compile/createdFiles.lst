@@ -3,16 +3,19 @@ com\portfolio\jofre\Security\Repository\iUsuarioRepository.class
 com\portfolio\jofre\Service\Shys.class
 com\portfolio\jofre\Security\Service\RolService.class
 com\portfolio\jofre\JofreApplication.class
+com\portfolio\jofre\Entity\Proyecto.class
 com\portfolio\jofre\Security\Enuns\RolNombre.class
 com\portfolio\jofre\Security\jwt\JwtTokenFilter.class
 com\portfolio\jofre\Service\SExperiencia.class
 com\portfolio\jofre\Dto\dtoEducacion.class
 com\portfolio\jofre\Security\Entity\Usuario.class
+com\portfolio\jofre\Controller\CProyecto.class
 com\portfolio\jofre\jofre\Controller\AuthController.class
 com\portfolio\jofre\Dto\dtoHys.class
 com\portfolio\jofre\Service\ImpPersonaService.class
 com\portfolio\jofre\Security\jwt\JwtEntryPoint.class
 com\portfolio\jofre\Controller\CExperiencia.class
+com\portfolio\jofre\Repository\RProyecto.class
 com\portfolio\jofre\Controller\CHys.class
 com\portfolio\jofre\Security\Dto\NuevoUsuario.class
 com\portfolio\jofre\Security\Dto\JwtDto.class
@@ -21,6 +24,7 @@ com\portfolio\jofre\Interface\IPersonaService.class
 com\portfolio\jofre\Repository\REducacion.class
 com\portfolio\jofre\Security\Entity\Rol.class
 com\portfolio\jofre\Security\jwt\JwtProvider.class
+com\portfolio\jofre\Service\ProyectoService.class
 com\portfolio\jofre\Service\SEducacion.class
 com\portfolio\jofre\Repository\Rhys.class
 com\portfolio\jofre\Entity\Educacion.class
