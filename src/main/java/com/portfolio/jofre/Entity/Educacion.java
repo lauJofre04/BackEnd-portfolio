@@ -16,8 +16,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.validation.constraints.NotNull;
 import java.util.Date;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -26,8 +24,7 @@ import org.hibernate.annotations.OnDeleteAction;
  * @author User
  */
 @Entity
-@Table(name="educacion")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+
 public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

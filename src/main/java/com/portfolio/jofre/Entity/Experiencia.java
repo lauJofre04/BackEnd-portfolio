@@ -12,12 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.validation.constraints.NotNull;
 import java.util.Date;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -26,8 +23,7 @@ import org.hibernate.annotations.OnDeleteAction;
  * @author User
  */
 @Entity
-@Table(name="experiencia")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+
 public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
