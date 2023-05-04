@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author User
  */
 @RestController
-@RequestMapping("experiencia")//localhost:8080/experiencia
-@CrossOrigin(origins="https://frontend-portfolio-5ac8d.web.app/")//direccion del front de angular
+@RequestMapping("/experiencia")//localhost:8080/experiencia
+@CrossOrigin(origins="https://frontend-portfolio-5ac8d.web.app")//direccion del front de angular
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
