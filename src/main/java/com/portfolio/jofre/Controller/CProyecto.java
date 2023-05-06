@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("/proyecto")
 @RestController
-@CrossOrigin(origins = "https://frontend-portfolio-5ac8d.web.app")
+@CrossOrigin(origins="https://frontend-portfolio-5ac8d.web.app",exposedHeaders = {"Access-Control-Allow-Origin","Access-Control-Allow-Credentials"})
 public class CProyecto {
     @Autowired
     ProyectoService sProyecto;

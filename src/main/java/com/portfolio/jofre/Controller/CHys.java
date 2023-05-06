@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://frontend-portfolio-5ac8d.web.app")
+@CrossOrigin(origins="https://frontend-portfolio-5ac8d.web.app",exposedHeaders = {"Access-Control-Allow-Origin","Access-Control-Allow-Credentials"})
 @RequestMapping("/skill")
 public class CHys {
 
