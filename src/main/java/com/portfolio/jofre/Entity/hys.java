@@ -23,7 +23,7 @@ import org.hibernate.annotations.OnDeleteAction;
 public class hys {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int hid;
     @NotNull
     private String habilidad;
     @NotNull
@@ -34,7 +34,7 @@ public class hys {
     //relacion
     @ManyToOne
     //creacion de columna con llave foranea
-    @JoinColumn(name = "personaid", insertable=false, updatable=false)
+    @JoinColumn(name = "id", insertable=false, updatable=false)
     //para que se borre si se borra la persona
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Persona persona;
@@ -50,12 +50,12 @@ public class hys {
         this.persona = persona;
     }
 
-    public int getId() {
-        return id;
+    public int getHId() {
+        return hid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setHId(int id) {
+        this.hid = id;
     }
 
     public String getHabilidad() {

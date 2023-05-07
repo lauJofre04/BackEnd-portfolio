@@ -28,7 +28,7 @@ import org.hibernate.annotations.OnDeleteAction;
 public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int eId;
     @NotNull
     private String estudio;
     @Temporal(jakarta.persistence.TemporalType.DATE)
@@ -45,7 +45,7 @@ public class Educacion {
      //relacion
     @ManyToOne
     //creacion de columna con llave foranea
-    @JoinColumn(name = "personaid", insertable=false, updatable=false)
+    @JoinColumn(name = "id", insertable=false, updatable=false)
     //para que se borre si se borra la persona
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Persona persona;
@@ -64,12 +64,12 @@ public class Educacion {
         this.persona = persona;
     }
 
-    public int getId() {
-        return id;
+    public int getEId() {
+        return eId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.eId = id;
     }
 
     public String getEstudio() {
