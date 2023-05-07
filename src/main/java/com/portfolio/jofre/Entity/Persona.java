@@ -29,41 +29,16 @@ public class Persona {
     private String apellido;
     
     @NotNull
-    @Size(min = 1, max = 40, message = "no cumple con la longitud")
-    private String titulo;
-    
-    @Lob
-    @NotNull
-    @Size(min = 20, max = 5000, message = "no cumple con la longitud")
-    private String sobreMi;
-
-    @Size(min = 1, max = 400, message = "no cumple con la longitud")
-    private String curriculum;
-    //relacion y para que borre si la persona no existe
-    @OneToMany(mappedBy="persona", cascade=CascadeType.ALL)
-    private List<Proyecto> proyectos; 
-    
-      //relacion y para que borre si la persona no existe
-    @OneToMany(mappedBy="persona", cascade=CascadeType.ALL)
-    private List<hys> habilidades; 
-    
-      //relacion y para que borre si la persona no existe
-    @OneToMany(mappedBy="persona", cascade=CascadeType.ALL)
-    private List<Educacion> estudios; 
-    
-      //relacion y para que borre si la persona no existe
-    @OneToMany(mappedBy="persona", cascade=CascadeType.ALL)
-    private List<Experiencia> experiencias; 
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String email;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String titulo, String sobreMi, String curriculum) {
+    public Persona(String nombre, String apellido, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.titulo = titulo;
-        this.sobreMi = sobreMi;
-        this.curriculum = curriculum;
+
     }
 
     public int getId() {
@@ -90,60 +65,12 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getSobreMi() {
-        return sobreMi;
-    }
-
-    public void setSobreMi(String sobreMi) {
-        this.sobreMi = sobreMi;
-    }
-
-    public String getCurriculum() {
-        return curriculum;
-    }
-
-    public void setCurriculum(String curriculum) {
-        this.curriculum = curriculum;
-    }
-    
-    @JsonManagedReference
-    public List<Proyecto> getProyectos() {
-        return proyectos;
-    }
-
-    public void setProyectos(List<Proyecto> proyectos) {
-        this.proyectos = proyectos;
-    }
-     @JsonManagedReference
-    public List<hys> getHabilidad() {
-        return habilidades;
-    }
-
-    public void setHabilidades(List<hys> habilidades) {
-        this.habilidades = habilidades;
-    }
-     @JsonManagedReference
-    public List<Educacion> getEstudios() {
-        return estudios;
-    }
-
-    public void setEstudios(List<Educacion> estudios) {
-        this.estudios = estudios;
-    }
-     @JsonManagedReference
-    public List<Experiencia> getExperiencias() {
-        return experiencias;
-    }
-
-    public void setExperiencias(List<Experiencia> experiencias) {
-        this.experiencias = experiencias;
-    }
 }
