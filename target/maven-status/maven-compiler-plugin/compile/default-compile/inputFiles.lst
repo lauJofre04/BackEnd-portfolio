@@ -1,4 +1,3 @@
-C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Dto\dtoExperiencia.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Repository\RProyecto.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Security\Entity\UsuarioPrincipal.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Security\Enuns\RolNombre.java
@@ -11,10 +10,8 @@ C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-Jo
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Entity\hys.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\jofre\Controller\AuthController.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Controller\CHys.java
-C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Dto\dtoPersona.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\jofre\Controller\Mensaje.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Entity\Persona.java
-C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Dto\dtoEducacion.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Entity\Educacion.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Interface\IPersonaService.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Controller\CEducacion.java
@@ -22,7 +19,6 @@ C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-Jo
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Service\SExperiencia.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Entity\Proyecto.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\JofreApplication.java
-C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Dto\dtoHys.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Security\Dto\NuevoUsuario.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Security\jwt\JwtEntryPoint.java
 C:\Users\User\OneDrive\Documentos\Lauti\Argentina Programa\ProyectoIntegrador-JofreLautaro\BackEnd-portfolio\src\main\java\com\portfolio\jofre\Service\Shys.java
