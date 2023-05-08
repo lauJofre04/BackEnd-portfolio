@@ -32,7 +32,7 @@ public class CHys {
     
      //lista de relojes por id de persona
     @GetMapping ("/persona/{id}/lista")
-    public List <hys> listaPer(@PathVariable Long id){
+    public List <hys> listaPer(@PathVariable int id){
         return sHabilidad.findByPersonaId(id);    
         }
     

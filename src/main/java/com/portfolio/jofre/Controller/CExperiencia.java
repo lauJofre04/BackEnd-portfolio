@@ -40,7 +40,7 @@ public class CExperiencia {
     
       //lista de experiencias por id de persona
     @GetMapping ("/persona/{id}/lista")
-    public List <Experiencia> listaPer(@PathVariable Long id){
+    public List <Experiencia> listaPer(@PathVariable int id){
         return sExperiencia.findByPersonaId(id);    
         }
     
