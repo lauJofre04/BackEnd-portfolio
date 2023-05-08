@@ -56,7 +56,5 @@ public class NuevoUsuario {
 
     public void setRoles(Set<String> roles) {
         this.roles = roles;
-    }
-    
-    
+    } 
 }
