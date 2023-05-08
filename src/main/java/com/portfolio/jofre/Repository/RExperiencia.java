@@ -16,5 +16,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RExperiencia extends JpaRepository<Experiencia,Integer>{
     
-    List<Experiencia> findByPersonaId(Long personaId);
+    List<Experiencia> findByPersonaId(int personaId);
 }

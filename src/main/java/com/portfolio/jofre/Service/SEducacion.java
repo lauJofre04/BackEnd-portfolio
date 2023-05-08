@@ -23,20 +23,20 @@ public class SEducacion {
     public List<Educacion> list(){
         return rEducacion.findAll();
     }
-    public Educacion getOne(int id){
-        Educacion edu= rEducacion.findById(id).orElse(null);
+    public Educacion getOne(int eid){
+        Educacion edu= rEducacion.findById(eid).orElse(null);
         return edu;
     }
     public void save(Educacion educacion){
         rEducacion.save(educacion);
     }
-    public void delete(int id){
-        rEducacion.deleteById(id);
+    public void delete(int eid){
+        rEducacion.deleteById(eid);
     }
     public void edit(Educacion edu){
         rEducacion.save(edu);
     }
-    public List<Educacion> findByPersonaId(Long personaId){
-        return rEducacion.findByPersonaId(personaId);
+    public List<Educacion> findByPersonaId(int id){
+        return rEducacion.findByPersonaId(id);
     }
 }

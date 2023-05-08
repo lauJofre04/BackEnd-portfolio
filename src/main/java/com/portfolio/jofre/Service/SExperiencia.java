@@ -44,7 +44,7 @@ public class SExperiencia {
     }
     
     //busca lista de relojes por la id de la persona
-    public List<Experiencia> findByPersonaId(Long personaId) {
+    public List<Experiencia> findByPersonaId(int personaId) {
         return rExperiencia.findByPersonaId(personaId);
     }
 }

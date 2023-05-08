@@ -39,7 +39,7 @@ public class CEducacion {
     
       //lista de relojes por id de persona
     @GetMapping ("/persona/{id}/lista")
-    public List <Educacion> listaPer(@PathVariable Long id){
+    public List <Educacion> listaPer(@PathVariable int id){
         return sEducacion.findByPersonaId(id);    
         }
     

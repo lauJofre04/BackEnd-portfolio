@@ -36,7 +36,7 @@ public class Shys {
     }
     
      //busca lista de relojes por la id de la persona
-    public List<hys> findByPersonaId(Long personaId) {
+    public List<hys> findByPersonaId(int personaId) {
         return rhys.findByPersonaId(personaId);
     }
 }

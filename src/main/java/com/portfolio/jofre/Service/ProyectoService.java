@@ -25,8 +25,8 @@ public class ProyectoService {
         return rProyecto.findAll();
     }
     
-    public Proyecto getOne(int id){
-        Proyecto proye = rProyecto.findById(id).orElse(null);
+    public Proyecto getOne(int pid){
+        Proyecto proye = rProyecto.findById(pid).orElse(null);
         return proye;
     }      
     
@@ -34,14 +34,16 @@ public class ProyectoService {
         rProyecto.save(proye);
     }
     
-     public void delete(int id){
-        rProyecto.deleteById(id);
+     public void delete(int pid){
+        rProyecto.deleteById(pid);
     }
      
      public void edit(Proyecto proye){
         rProyecto.save(proye);
     }
-           
+     public List<Proyecto> findByPersonaId(int personaId) {
+        return rProyecto.findByPersonaId(personaId);
+    }      
      
      
     
