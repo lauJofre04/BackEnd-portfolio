@@ -8,6 +8,7 @@ package com.portfolio.jofre.Security.Enuns;
  *
  * @author User
  */
+
 public enum RolNombre {
     ROLE_ADMIN, ROLE_USER
     

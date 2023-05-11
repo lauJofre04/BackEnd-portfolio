@@ -18,6 +18,7 @@ import jakarta.validation.constraints.NotNull;
  * @author User
  */
 @Entity
+
 public class Rol {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
