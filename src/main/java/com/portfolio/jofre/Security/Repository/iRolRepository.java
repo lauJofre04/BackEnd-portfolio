@@ -4,7 +4,7 @@
  */
 package com.portfolio.jofre.Security.Repository;
 
-import com.portfolio.jofre.Security.Entity.Rol;
+import com.portfolio.jofre.Security.Enuns.Entity.Rol;
 import com.portfolio.jofre.Security.Enuns.RolNombre;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;

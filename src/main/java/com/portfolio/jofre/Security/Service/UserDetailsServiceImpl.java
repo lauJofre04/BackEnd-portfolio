@@ -1,9 +1,8 @@
 
 package com.portfolio.jofre.Security.Service;
 
-import com.portfolio.jofre.Security.Entity.Usuario;
-import com.portfolio.jofre.Security.Entity.UsuarioPrincipal;
-import jakarta.transaction.Transactional;
+import com.portfolio.jofre.Security.Enuns.Entity.Usuario;
+import com.portfolio.jofre.Security.Enuns.Entity.UsuarioPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,7 +10,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-@Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     UsuarioService usuarioService;

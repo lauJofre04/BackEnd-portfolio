@@ -1,7 +1,7 @@
 
 package com.portfolio.jofre.Security.jwt;
 
-import com.portfolio.jofre.Security.Entity.UsuarioPrincipal;
+import com.portfolio.jofre.Security.Enuns.Entity.UsuarioPrincipal;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;

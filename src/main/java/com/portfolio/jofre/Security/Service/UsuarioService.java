@@ -1,7 +1,7 @@
 
 package com.portfolio.jofre.Security.Service;
 
-import com.portfolio.jofre.Security.Entity.Usuario;
+import com.portfolio.jofre.Security.Enuns.Entity.Usuario;
 import com.portfolio.jofre.Security.Repository.iUsuarioRepository;
 import jakarta.transaction.Transactional;
 import java.util.Optional;

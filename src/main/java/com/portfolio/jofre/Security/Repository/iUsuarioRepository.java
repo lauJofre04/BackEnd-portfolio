@@ -4,7 +4,7 @@
  */
 package com.portfolio.jofre.Security.Repository;
 
-import com.portfolio.jofre.Security.Entity.Usuario;
+import com.portfolio.jofre.Security.Enuns.Entity.Usuario;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

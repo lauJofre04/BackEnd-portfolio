@@ -4,7 +4,7 @@
  */
 package com.portfolio.jofre.Security.Service;
 
-import com.portfolio.jofre.Security.Entity.Rol;
+import com.portfolio.jofre.Security.Enuns.Entity.Rol;
 import com.portfolio.jofre.Security.Enuns.RolNombre;
 import com.portfolio.jofre.Security.Repository.iRolRepository;
 import jakarta.transaction.Transactional;
