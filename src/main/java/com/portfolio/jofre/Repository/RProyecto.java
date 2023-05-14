@@ -10,6 +10,10 @@ import org.springframework.stereotype.Repository;
 public interface RProyecto extends JpaRepository <Proyecto, Integer>{
 
     public List<Proyecto> findByPersonaId(int personaId);
+
+    public Object findById(int pid);
+
+    public void deleteById(int pid);
     
     
 }

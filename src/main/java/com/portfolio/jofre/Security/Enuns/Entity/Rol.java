@@ -23,13 +23,7 @@ public class Rol {
     @NotNull
     private RolNombre rolNombre;
     //Constructor
-    public Rol(){
-        
-    }
 
-    public Rol(RolNombre rolNombre) {
-        this.rolNombre = rolNombre;
-    }
     //Getters y Setters
 
     public int getId() {

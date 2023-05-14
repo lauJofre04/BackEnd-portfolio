@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 @Transactional//persistencia en base de datos
 public class ProyectoService {
 
-    @Autowired
+ 
     RProyecto rProyecto;
     
     public List<Proyecto> list(){
@@ -26,7 +26,7 @@ public class ProyectoService {
     }
     
     public Proyecto getOne(int pid){
-        Proyecto proye = rProyecto.findById(pid).orElse(null);
+        Proyecto proye = (Proyecto) rProyecto.findById(pid);
         return proye;
     }      
     

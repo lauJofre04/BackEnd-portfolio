@@ -4,19 +4,22 @@ import com.portfolio.jofre.Entity.Persona;
 import com.portfolio.jofre.Repository.IPersonaRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+
 public class ImpPersonaService{
-    @Autowired IPersonaRepository rPersona;
+    
+    
+    IPersonaRepository rPersona;
     
      public List<Persona> list(){
         return rPersona.findAll();
     }
     
-    public Persona getOne(Long id){
+    public Persona getOne(int id){
         Persona perso = rPersona.findById(id).orElse(null);
         return perso;
     }    
@@ -27,7 +30,7 @@ public class ImpPersonaService{
     }      
     
    
-     public void delete(Long id){
+     public void delete(int id){
         rPersona.deleteById(id);
     }    
      

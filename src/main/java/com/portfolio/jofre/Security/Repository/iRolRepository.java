@@ -16,4 +16,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface iRolRepository extends JpaRepository<Rol, Integer>{
     Optional<Rol> findByRolNombre(RolNombre rolNombre);
+
+    
 }

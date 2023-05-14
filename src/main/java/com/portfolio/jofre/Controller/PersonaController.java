@@ -31,7 +31,7 @@ public class PersonaController {
     }
     
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Persona> detail(@PathVariable("id") Long id){
+    public ResponseEntity<Persona> detail(@PathVariable("id") int id){
         Persona perso = IPersonaService.getOne(id);
         return new ResponseEntity(perso, HttpStatus.OK);
     }       
@@ -44,7 +44,7 @@ public class PersonaController {
     
    
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable Long id){
+    public void delete(@PathVariable int id){
         IPersonaService.delete(id);
     }
     

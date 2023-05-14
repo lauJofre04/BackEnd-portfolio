@@ -17,4 +17,10 @@ import org.springframework.stereotype.Repository;
 public interface RExperiencia extends JpaRepository<Experiencia,Integer>{
     
     List<Experiencia> findByPersonaId(int personaId);
+
+    public Object findById(int id);
+
+    public void deleteById(int id);
+
+
 }

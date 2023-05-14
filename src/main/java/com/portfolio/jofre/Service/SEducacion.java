@@ -18,13 +18,13 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class SEducacion {
-    @Autowired
+    
     REducacion rEducacion;
     public List<Educacion> list(){
         return rEducacion.findAll();
     }
     public Educacion getOne(int eid){
-        Educacion edu= rEducacion.findById(eid).orElse(null);
+        Educacion edu= (Educacion) rEducacion.findById(eid);
         return edu;
     }
     public void save(Educacion educacion){

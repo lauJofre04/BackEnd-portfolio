@@ -4,14 +4,13 @@ import com.portfolio.jofre.Entity.hys;
 import com.portfolio.jofre.Repository.Rhys;
 import jakarta.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Transactional
 @Service
 public class Shys {
-    @Autowired
+    
     Rhys rhys;
     
     public List<hys> list(){
@@ -19,7 +18,7 @@ public class Shys {
     }
     
     public hys getOne(int id){
-        return rhys.findById(id).orElse(null);
+        return (hys) rhys.findById(id);
     }
         
     

@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class SExperiencia {
-    @Autowired
+   
      RExperiencia rExperiencia;
      
      public List<Experiencia> list(){
@@ -26,7 +26,7 @@ public class SExperiencia {
     }
     
     public Experiencia getOne(int id){
-        Experiencia expe = rExperiencia.findById(id).orElse(null);
+        Experiencia expe =(Experiencia) rExperiencia.findById(id);
         return expe;
     }
        

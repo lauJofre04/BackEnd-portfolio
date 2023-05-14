@@ -17,4 +17,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface REducacion extends JpaRepository<Educacion,Integer> {
     List<Educacion> findByPersonaId(int personaId);
+
+    public Object findById(int eid);
+    public void deleteById(int eid);
 }

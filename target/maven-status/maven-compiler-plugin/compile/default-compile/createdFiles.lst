@@ -15,7 +15,6 @@ com\portfolio\jofre\Service\ImpPersonaService.class
 com\portfolio\jofre\Security\jwt\JwtEntryPoint.class
 com\portfolio\jofre\Controller\CExperiencia.class
 com\portfolio\jofre\Repository\RProyecto.class
-.netbeans_automatic_build
 com\portfolio\jofre\Controller\CHys.class
 com\portfolio\jofre\Security\Dto\NuevoUsuario.class
 com\portfolio\jofre\Security\Dto\JwtDto.class
