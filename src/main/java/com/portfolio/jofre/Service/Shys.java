@@ -2,10 +2,9 @@ package com.portfolio.jofre.Service;
 
 import com.portfolio.jofre.Entity.hys;
 import com.portfolio.jofre.Repository.Rhys;
-import jakarta.transaction.Transactional;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service

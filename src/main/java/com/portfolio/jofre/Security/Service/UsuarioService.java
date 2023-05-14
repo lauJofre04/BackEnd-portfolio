@@ -2,9 +2,7 @@
 package com.portfolio.jofre.Security.Service;
 
 import com.portfolio.jofre.Security.Enuns.Entity.Usuario;
-import jakarta.transaction.Transactional;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.portfolio.jofre.Security.Repository.IUsuarioRepository;
 import org.springframework.context.annotation.Configuration;

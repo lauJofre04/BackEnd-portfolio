@@ -7,12 +7,14 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 @ComponentScan("com.portfolio.jofre.Security")
 @EntityScan({"com.portfolio.jofre.Security.Enuns.Entity"})
-@EnableJpaRepositories(basePackages ={"com.portfolio.jofre.Security.Repository"})
+@EnableJpaRepositories
+@EnableTransactionManagement
 public class JofreApplication {
 
 	public static void main(String[] args) {

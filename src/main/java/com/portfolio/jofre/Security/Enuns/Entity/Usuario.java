@@ -1,15 +1,14 @@
 package com.portfolio.jofre.Security.Enuns.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
-import com.portfolio.jofre.Security.Enuns.Entity.Rol;
-import jakarta.validation.constraints.NotBlank;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import org.hibernate.annotations.Entity;
+import org.springframework.data.annotation.Id;
 
 @Entity
 public class Usuario {

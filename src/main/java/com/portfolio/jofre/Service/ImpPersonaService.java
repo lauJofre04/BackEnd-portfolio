@@ -2,10 +2,10 @@ package com.portfolio.jofre.Service;
 
 import com.portfolio.jofre.Entity.Persona;
 import com.portfolio.jofre.Repository.IPersonaRepository;
-import jakarta.transaction.Transactional;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional

@@ -5,18 +5,18 @@
 package com.portfolio.jofre.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.validation.constraints.NotNull;
 import java.util.Date;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.jpa.repository.Temporal;
 
 /**
  *
@@ -30,12 +30,6 @@ public class Experiencia {
     private int exId;
     @NotNull
     private String puesto;
-    
-    @Temporal(jakarta.persistence.TemporalType.DATE)
-    private Date inicio;
-    
-    @Temporal(jakarta.persistence.TemporalType.DATE)
-    private Date fin; 
     
     @NotNull
     @Lob   
@@ -60,10 +54,8 @@ public class Experiencia {
     public Experiencia() {
     }
 
-    public Experiencia(String puesto, Date inicio, Date fin, String descripcion, String imagen, String url, String empresa, boolean esTrabajoActual, Persona persona) {
+    public Experiencia(String puesto, String descripcion, String imagen, String url, String empresa, boolean esTrabajoActual, Persona persona) {
         this.puesto = puesto;
-        this.inicio = inicio;
-        this.fin = fin;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.url = url;
@@ -86,22 +78,6 @@ public class Experiencia {
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
-    }
-
-    public Date getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
     }
 
     public String getDescripcion() {

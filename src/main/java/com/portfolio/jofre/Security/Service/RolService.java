@@ -8,9 +8,7 @@ import com.portfolio.jofre.Security.Enuns.Entity.Rol;
 import com.portfolio.jofre.Security.Enuns.RolNombre;
 import com.portfolio.jofre.Security.Repository.iRolRepository;
 import java.util.Optional;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 
 public class RolService {

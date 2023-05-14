@@ -5,11 +5,11 @@
 package com.portfolio.jofre.Security.Enuns.Entity;
 
 import com.portfolio.jofre.Security.Enuns.RolNombre;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.validation.constraints.NotNull;
+import org.hibernate.annotations.Entity;
+import org.springframework.data.annotation.Id;
 
 /**
  *
