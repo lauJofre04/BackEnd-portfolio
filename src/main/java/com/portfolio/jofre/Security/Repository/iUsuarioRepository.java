@@ -6,6 +6,7 @@ package com.portfolio.jofre.Security.Repository;
 
 import com.portfolio.jofre.Security.Enuns.Entity.Usuario;
 import java.util.Optional;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,8 @@ import org.springframework.stereotype.Repository;
  * @author User
  */
 @Repository
-public interface iUsuarioRepository extends JpaRepository<Usuario,Integer>{
+@Configuration
+public interface IUsuarioRepository extends JpaRepository<Usuario,Integer>{
     Optional<Usuario> findByNombreUsuario(String nombreUsuario);
     boolean existsByNombreUsuario(String nombreUsuario);
     boolean existsByEmail(String email);

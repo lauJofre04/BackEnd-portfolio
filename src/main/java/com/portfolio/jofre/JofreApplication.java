@@ -5,13 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
+@Configuration
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
-@ComponentScan({"com.portfolio.jofre.Service"})
-@EntityScan("com.portfolio.jofre.Entity")
-@EnableJpaRepositories("com.portfolio.jofre.Repository")
+@ComponentScan("com.portfolio.jofre.Security")
+@EntityScan({"com.portfolio.jofre.Security.Enuns.Entity"})
+@EnableJpaRepositories(basePackages ={"com.portfolio.jofre.Security.Repository"})
 public class JofreApplication {
 
 	public static void main(String[] args) {

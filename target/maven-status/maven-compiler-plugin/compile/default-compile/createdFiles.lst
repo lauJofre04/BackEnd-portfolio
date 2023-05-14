@@ -1,5 +1,4 @@
 com\portfolio\jofre\Entity\Persona.class
-com\portfolio\jofre\Security\Repository\iUsuarioRepository.class
 com\portfolio\jofre\Service\Shys.class
 com\portfolio\jofre\Security\Service\RolService.class
 com\portfolio\jofre\JofreApplication.class
@@ -28,6 +27,7 @@ com\portfolio\jofre\Entity\Educacion.class
 com\portfolio\jofre\Repository\IPersonaRepository.class
 com\portfolio\jofre\Repository\RExperiencia.class
 com\portfolio\jofre\Security\Dto\LoginUsuario.class
+com\portfolio\jofre\Security\Repository\IUsuarioRepository.class
 com\portfolio\jofre\Controller\CEducacion.class
 com\portfolio\jofre\Entity\Experiencia.class
 com\portfolio\jofre\Security\Service\UserDetailsServiceImpl.class

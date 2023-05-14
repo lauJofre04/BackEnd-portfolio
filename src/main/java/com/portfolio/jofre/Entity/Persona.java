@@ -13,7 +13,7 @@ import jakarta.validation.constraints.Size;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     
     @NotNull
     @Size(min = 1, max = 40, message = "no cumple con la longitud")
@@ -33,14 +33,15 @@ public class Persona {
     public Persona(String nombre, String apellido, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.email=email;
 
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -40,7 +40,7 @@ public class AuthController {
     AuthenticationManager authenticationManager;
     @Autowired
     UsuarioService usuarioService;
-    @Autowired
+    
     RolService rolService;
     @Autowired
     JwtProvider jwtProvider;

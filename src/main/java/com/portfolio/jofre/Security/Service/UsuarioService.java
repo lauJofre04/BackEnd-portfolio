@@ -2,27 +2,32 @@
 package com.portfolio.jofre.Security.Service;
 
 import com.portfolio.jofre.Security.Enuns.Entity.Usuario;
-import com.portfolio.jofre.Security.Repository.iUsuarioRepository;
 import jakarta.transaction.Transactional;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.portfolio.jofre.Security.Repository.IUsuarioRepository;
+import org.springframework.context.annotation.Configuration;
 
 @Service
-@Transactional
+@Configuration
 public class UsuarioService {
-    @Autowired
-    iUsuarioRepository iusuarioRepository;
+    
+    IUsuarioRepository iusuarioRepository;
+    
+
     public Optional<Usuario> getByNombreUsuario(String nombreUsuario){
         return iusuarioRepository.findByNombreUsuario(nombreUsuario);
     }
+
     public boolean existsByNombreUsuario(String nombreUsuario){
         return iusuarioRepository.existsByNombreUsuario(nombreUsuario);
     }
+
     public boolean existsByEmail(String email){
         return iusuarioRepository.existsByEmail(email);
     }
-
+  
     public void save(Usuario usuario) {
         iusuarioRepository.save(usuario);
     }

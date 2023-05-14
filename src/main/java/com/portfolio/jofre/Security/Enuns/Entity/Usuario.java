@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
+import com.portfolio.jofre.Security.Enuns.Entity.Rol;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Usuario {
@@ -23,7 +25,7 @@ public class Usuario {
     private String email;
     @NotNull
     private String password;
-    @NotNull
+    @NotBlank
     private Set<Rol> roles= new HashSet<>();
     
     //Constructores
