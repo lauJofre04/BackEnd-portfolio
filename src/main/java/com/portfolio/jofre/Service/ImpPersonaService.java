@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class ImpPersonaService{
     
     
-    IPersonaRepository rPersona;
+    IPersonaRepository rPersona ;
     
      public List<Persona> list(){
         return rPersona.findAll();
